@@ -10,6 +10,7 @@
 | [Day 3](https://adventofcode.com/2024/day/3) | [p2.go](d3/p2.go) | ⭐ | ⭐ |
 | [Day 4](https://adventofcode.com/2024/day/4) | [p2.go](d4/p2.go) | ⭐ | ⭐ |
 | [Day 5](https://adventofcode.com/2024/day/5) | [p2.go](d5/p2.go) | ⭐ | ⭐ |
+| [Day 6](https://adventofcode.com/2024/day/6) |  | ⭐ |   |
 <!--- advent_readme_stars table --->
 
 ## Fun Comments
