@@ -46,27 +46,36 @@ func calculate(input Input) int {
 }
 
 func reduceFiles(files []File, i int) []File {
-  printFiles(files)
   if i >= len(files) {
+    fmt.Print("END                     :  ")
+    printFiles(files)
     return files
   }
   if files[i].Free {
     li := len(files)-1
     if files[li].Free {
+      fmt.Print("REMOVE LAST FREE        :  ")
+      printFiles(files)
       files = removeFile(files, li)
       return reduceFiles(files, i)
     } else if files[i].Length > files[li].Length {
+      fmt.Print("MOVE LAST INTO FREE     :  ")
+      printFiles(files)
       files[i].Length -= files[li].Length
       temp := files[li]
       files = removeFile(files, li)
       files = addFile(files, i, temp)
       return reduceFiles(files, i+1)
     } else if files[i].Length == files[li].Length {
+      fmt.Print("REPLACE LAST WITH FREE  :  ")
+      printFiles(files)
       files[i].Index = files[li].Index
       files[i].Free = false
       files = removeFile(files, li)
       return reduceFiles(files, i+1)
     } else {
+      fmt.Print("REPLACE FREE WITH LAST  :  ")
+      printFiles(files)
       files[li].Length -= files[i].Length
       files[i].Index = files[li].Index
       files[i].Free = false
